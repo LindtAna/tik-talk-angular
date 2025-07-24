@@ -1,4 +1,6 @@
 :host{
     display: grid;
     grid-template-columns: 300px 1fr;
+     min-height: 100vh; // Добавьте это!
+  width: 100%; // Добавьте это!
 }

@@ -18,12 +18,14 @@
 
 
 
-
 body {
-    background: var(--dark-colour);
+    background:
+        var(--dark-colour) url('/assets/images/background.png') no-repeat fixed center center / cover;
+    min-height: 100vh;
+    margin: 0;
     color: var(--light-colour);
     font-family: 'JetBrains Mono', monospace;
-    background-image: url(/assets/images/background.png);
+    // background-image: url(/assets/images/background.png);
 }
 
 .skill-tag {
