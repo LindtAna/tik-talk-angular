@@ -1,1 +1,56 @@
-<p>sidebar.component works!</p>
+<img class=" "
+src="/assets/svg/logo-small.svg"
+alt="tiktal logo" class="ml16 mb20" />
+
+
+<nav>
+   <ul class="main-menu-list">
+      <li *ngFor ="let menuItem of menuItems">
+         <button class="main-menu-item">
+            <svg [icon]="menuItem.icon"></svg>
+            <span>{{menuItem.label}}</span>
+         </button>
+      </li>
+   </ul>
+</nav>
+
+<p class="medium-text mb20">Subscribers</p>
+
+
+@for (profile of subscribers$ | async; track profile.id){
+<app-subscriber-card
+[profile]="profile">
+
+</app-subscriber-card>
+}
+
+
+
+<div class="mt20 to-subscribers">
+<a
+[routerLink]="['/subscribers']"
+class="to-subscribers-link medium-text">
+View All Subscribers
+</a>
+<svg icon="arrow" class="to-subscribers-icon"></svg>
+</div>
+
+<footer class="sidebar__footer">
+@if(me(); as me){
+   @if(me.avatarUrl){
+      <img 
+           [src]="me.avatarUrl | imgUrl"
+           alt="my avatar"
+           />
+   } @else {
+      <img src="/assets/images/avatar-placeholder.png"
+      alt="my avatar"
+           />
+   }
+
+   <div class="medium-text username-text">{{ me.username}}</div>
+   <a [routerLink]="['settings']" class="settings-button">
+      <svg icon="settings"></svg>
+   </a>
+}
+</footer>

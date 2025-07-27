@@ -1,0 +1,98 @@
+:host {
+    display: block;
+    padding: 20px 12px;
+    position: relative;
+    background: var(--dark-colour);
+}
+
+
+.main-menu {
+    &-list {
+        display: grid;
+        gap: 8px;
+        list-style: none;
+    }
+
+    &-item {
+        padding: 16px 12px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        color: var(--light-colour);
+        display: grid;
+        grid-template-columns: 16px 1fr max-content;
+        gap: 12px;
+        font-weight: 700;
+        line-height: 24px;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        border-radius: 2px;
+
+
+        &:hover,
+        &:focus-visible {
+            background: var(--hover-colour);
+            color: var(--primary-colour);
+
+            .main-menu-item svg {
+                color: var(--primary-colour);
+            }
+        }
+
+    }
+}
+
+.sidebar__footer {
+    position: absolute;
+    width: calc(100% - 20px);
+    bottom: 20px;
+    background: var(--hover-colour);
+    border-radius: 2px;
+    padding: 4px 16px;
+    display: grid;
+    grid-template-columns: 32px 1fr 16px;
+    gap: 12px ;
+    align-items: center;
+
+    img{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+    
+}
+
+.username-text{
+   color:var(--primary-colour);
+   font-weight: 700;
+}
+
+.main-menu-item svg {
+    width: 16px;
+    height: 16px;
+}
+
+.to-subscribers {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    &-link {
+        color: var(--primary-colour);
+        text-decoration: none;
+    }
+
+    &-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+.settings-button{
+    svg{
+       width: 13px;
+       height: 13px;
+    }
+}
