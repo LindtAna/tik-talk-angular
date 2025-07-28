@@ -26,10 +26,14 @@ getMe() {
   )
 }
 
-getSubscribersShortList(){
+getAccount(id:string){
+  return this.http.get<Profile>(`${this.baseAPIUrl}account/${id}`)
+}
+
+getSubscribersShortList(subsAmount = 3){
   return this.http.get<Pageble<Profile>>(`${this.baseAPIUrl}account/subscribers/`)
   .pipe(
-    map((res: { items: any; }) => res.items.slice(0, 3))
+    map((res: { items: any; }) => res.items.slice(0, subsAmount))
   )
 }
 }

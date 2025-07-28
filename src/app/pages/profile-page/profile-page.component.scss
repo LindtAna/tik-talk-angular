@@ -1,0 +1,82 @@
+.profile-page {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px;
+    }
+
+    &__body {
+        display: grid;
+        gap: 64px;
+        grid-template-columns: 1fr 350px;
+        padding: 24px;
+    }
+}
+
+.to-setting-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 190px;
+    text-decoration: none;
+}
+
+.to-setting-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--dark-colour);
+}
+
+.subscribers {
+    &-wrapper {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+    }
+
+    &-avatar-button {
+        width: 36px;
+        height: 36px;
+
+        img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+    }
+
+    &-search-button {
+        border-radius: 50%;
+        background: var(--light-colour);
+        width: 14px;
+        height: 14px;
+        position: relative;
+
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 8px;
+            background: var(--dark-colour);
+            top: 50%;
+            left: 50%;
+        }
+
+        &:before {
+            transform: translateY(-50%) translateX(-50%);
+        }
+
+        &:after {
+            transform: translateY(-50%) translateX(-50%) rotate(90deg);
+        }
+    }
+}
+
+.stack-wrapper {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
