@@ -25,7 +25,7 @@ menuItems = [
   {
     label: 'My Page',
     icon: 'home',
-    link: ''
+    link: 'profile/me'
   },
 
   {

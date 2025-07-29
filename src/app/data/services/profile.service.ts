@@ -36,8 +36,13 @@ getSubscribersShortList(subsAmount = 3){
     map((res: { items: any; }) => res.items.slice(0, subsAmount))
   )
 }
-}
-function res(value: Profile): void {
-  throw new Error('Function not implemented.');
-}
 
+
+patchProfile(profile: Partial<Profile>) {
+    return this.http.patch<Profile>(
+      `${this.baseAPIUrl}account/me`,
+      profile
+    )
+  }
+
+}

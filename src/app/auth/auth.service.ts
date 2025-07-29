@@ -59,6 +59,11 @@ export class AuthService {
     this.router.navigate(['/login'])
   }
 
+  delete() {
+    this.logout();
+    return this.http.delete(`${this.baseAPIUrl}account/me`)
+  }
+
   saveTokens(res: TokenResponse){
     this.token = res.access_token
         this.refreshToken = res.refresh_token

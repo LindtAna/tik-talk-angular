@@ -5,7 +5,7 @@
 
     <a [routerLink]="['/settings']" class="button to-setting-button">
         Edit Profile
-        <svg icon="settings" class="to-setting-icon"></svg>
+        <svg icon="settings-black" class="to-setting-icon"></svg>
     </a>
 </header>
 
@@ -28,7 +28,7 @@
 
         <h3 class="h6 mb16">Tech Stack</h3>
         <div class="stack-wrapper mb32">
-            @for (skill of ['JS', 'TS', 'SCSS','JS', 'TS', 'SCSS','JS', 'TS', 'SCSS','JS', 'TS', 'SCSS']; track skill){
+            @for (skill of profile.stack; track skill){
             <div class="skill-tag">{{skill}}</div>
             }
         </div>

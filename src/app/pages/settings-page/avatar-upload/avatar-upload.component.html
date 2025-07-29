@@ -1,0 +1,14 @@
+<img class="avatar" [src]="preview()" alt="profile image placeholder image" />
+
+<div class="dropzone" tabindex="0" (keyup.enter)="fileDrop.click()">
+
+    <div class="dropzone-content">
+        <svg icon="upload"></svg>
+        <!-- <img src="/assets/svg/upload.svg" alt="upload icon"> -->
+        <span class="medium-text">
+            Drop an image here (max resolution: 5,000 × 5,000 p)
+        </span>
+    </div>
+
+    <input tabindex="-1" class="avatar-input" type="file" #fileDrop (change)="fileBrowserHandler($event)">
+</div>

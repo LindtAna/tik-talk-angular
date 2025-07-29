@@ -1,0 +1,55 @@
+@mixin flex-center-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin profile-actions {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--light-solid);
+  border-radius: 2px;
+  padding: 14px;
+}
+
+
+@mixin font-size12-500-133 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+}
+
+@mixin font-size12-700 {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 133%;
+}
+
+@mixin font-size14-700-150 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin font-size14-500-150 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+@mixin font-size14-400-150 {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
