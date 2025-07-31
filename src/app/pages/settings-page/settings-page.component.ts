@@ -3,7 +3,6 @@ import { ProfileHeaderComponent} from "../../common-ui/profile-header/profile-he
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProfileService } from '../../data/services/profile.service';
 import { firstValueFrom } from 'rxjs';
-// import { AvatarUploadComponent } from "./avatar-upload/avatar-upload.component";
 import { AuthService } from '../../auth/auth.service';
 import { AvatarUploadComponent } from './avatar-upload/avatar-upload.component';
 import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
@@ -22,7 +21,7 @@ export class SettingsPageComponent {
   profileService = inject(ProfileService);
   authService = inject(AuthService)
 
-  //  @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent
+  @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent
 
   form = this.fb.group({
     firstName: ['', Validators.required],
@@ -44,15 +43,20 @@ export class SettingsPageComponent {
     });
   }
 
-  // ngAfterViewInit( ) {
-  //     this.avatarUploader.avatar
-  //   }
+  ngAfterViewInit( ) {
+      this.avatarUploader.avatar
+    }
 
   onSave() {
-    this.form.markAllAsTouched();
-    this.form.updateValueAndValidity();
+    this.form.markAllAsTouched()
+    this.form.updateValueAndValidity()
 
-    if (this.form.invalid) return;
+    if (this.form.invalid) return
+
+     if (this.avatarUploader.avatar) {
+     firstValueFrom(this.profileService.uploadAvatar(this.avatarUploader.avatar))
+     }
+
 //@ts-ignore
     firstValueFrom(this.profileService.patchProfile({
       ...this.form.value,
@@ -60,9 +64,6 @@ export class SettingsPageComponent {
     }))
   }
 
-    // if (this.avatarUploader.avatar) {
-    //   firstValueFrom(this.profileService.uploadAvatar(this.avatarUploader.avatar))
-    // }
 
     
 

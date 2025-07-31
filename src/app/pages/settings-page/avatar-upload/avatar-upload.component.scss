@@ -20,6 +20,10 @@
     display: grid;
     place-content: center;
 
+    &.fileover{
+         border: 1px dashed var(--primary-colour);
+    }
+
     &-content{
         display: flex;
         flex-direction: column;

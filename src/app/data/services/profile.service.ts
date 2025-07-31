@@ -45,4 +45,15 @@ patchProfile(profile: Partial<Profile>) {
     )
   }
 
+
+  uploadAvatar(file: File ){
+    const fd = new FormData()
+    fd.append('image', file)
+    
+     return this.http.post<Profile>(
+      `${this.baseAPIUrl}account/upload_image`,
+      fd
+    )
+  }
+
 }
