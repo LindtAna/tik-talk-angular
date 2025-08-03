@@ -31,6 +31,7 @@
         text-decoration: none;
 
 
+        &.active,
         &:hover,
         &:focus-visible {
             background: var(--hover-colour);
@@ -53,20 +54,20 @@
     padding: 4px 16px;
     display: grid;
     grid-template-columns: 32px 1fr 16px;
-    gap: 12px ;
+    gap: 12px;
     align-items: center;
 
-    img{
+    img {
         width: 32px;
         height: 32px;
         border-radius: 50%;
     }
-    
+
 }
 
-.username-text{
-   color:var(--primary-colour);
-   font-weight: 700;
+.username-text {
+    color: var(--primary-colour);
+    font-weight: 700;
 }
 
 .main-menu-item svg {
@@ -91,10 +92,10 @@
 }
 
 
-.settings-button{
-    svg{
-       width: 13px;
-       height: 13px;
-       color: var(--primary-colour);
+.settings-button {
+    svg {
+        width: 13px;
+        height: 13px;
+        color: var(--primary-colour);
     }
 }
