@@ -1,1 +1,5 @@
-<p>avatar-circle.component works!</p>
+@if (avatarUrl(); as avatarUrl) {
+  <img [src]="avatarUrl | imgUrl" alt="avatar placeholder">
+} @else {
+  <img src="assets/imgages/avatar-placeholder.png" alt="avatar placeholder">
+}

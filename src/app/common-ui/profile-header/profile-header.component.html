@@ -1,5 +1,9 @@
-@if(profile(); as profile){
-@if(profile.avatarUrl){
+<div class="profile-logo-name" [ngClass]="layoutClass">
+  @if (profile(); as profile) {
+
+    <app-avatar-circle [avatarUrl]="profile.avatarUrl" [class]="avatarSize"></app-avatar-circle>
+
+<!-- @if(profile.avatarUrl){
       <img 
            [src]="profile.avatarUrl | imgUrl"
            alt="my avatar"
@@ -8,12 +12,11 @@
       <img src="/assets/images/avatar-placeholder.png"
       alt="my avatar"
            />
-   }
+   } -->
 
-   <div class="username-surname">
-    <h1 class="h4 mb4">{{profile.firstName}} {{profile.lastName}}</h1>
-    <span class="regular">{{profile.username}}</span>
-   </div>
-
-   
-}
+  <div class="profiles-names">
+      <h1 class="profile-title">{{ profile.firstName }} {{ profile.lastName }}</h1>
+      <div class="profile-subtitle">{{profile.username}}</div>
+    </div>
+  }
+</div>
