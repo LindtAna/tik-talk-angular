@@ -17,7 +17,7 @@ import { firstValueFrom } from 'rxjs';
 export class SidebarComponent {
 profileService = inject(ProfileService)
 
-subscribers$ = this.profileService.getSubscribersShortList()
+subscribers$ = this.profileService.getSubscribersShortList(5)
 
 me = this.profileService.me
 
@@ -42,6 +42,6 @@ menuItems = [
 ]
 
 ngOnInit(){
-  firstValueFrom(this.profileService.getMe())
+  this.profileService.getMe().subscribe();
 }
 }

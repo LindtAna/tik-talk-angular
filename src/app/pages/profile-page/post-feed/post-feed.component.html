@@ -1,3 +1,11 @@
-<app-post-input></app-post-input>
+<app-post-input
+  [showTitle]="true"
+  [placeholder]="'What’s on your mind?'"
+  (created)="onCreatePost($event)">
+</app-post-input>
 
-<app-post></app-post>
+<div class="scrollable-feed">
+  @for (post of feed(); track post.id) {
+    <app-post [post]="post"></app-post>
+  }
+</div>

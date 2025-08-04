@@ -1,6 +1,6 @@
 @import "fonts";
 @import "margins";
-@import "styles/mixins";
+@import "../src/styles/mixins.scss";
 
 :root {
     --dark-colour: #000000;
@@ -23,13 +23,13 @@
 
 body {
     height: 100dvh;
-    background:
-        var(--dark-colour) url('/assets/images/background.png') no-repeat fixed center center / cover;
-    min-height: 100vh;
-    margin: 0;
+    background: var(--dark-colour);
+    background-image: url('/assets/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     color: var(--light-colour);
     font-family: 'JetBrains Mono', monospace;
-    // background-image: url(/assets/images/background.png);
+    font-weight: 400;
 }
 
 .skill-tag {
@@ -42,7 +42,6 @@ body {
     font-weight: 700;
     height: 24px;
     line-height: 133%;
-    //text-align: center;
 
 }
 
@@ -165,22 +164,21 @@ body {
         padding: 12px 0;
         min-height: 30px;
 
-        &:focus-visible{
+        &:focus-visible {
             outline: 1px solid var(--primary-colour);
         }
     }
-//  &-avatar {
-//     font-weight: 500;
-//     font-size: 14px;
-//     line-height: 150%;
-//     border-bottom: 1px solid var(--light-solid);
-//   }
+
+    //  &-avatar {
+    //     font-weight: 500;
+    //     font-size: 14px;
+    //     line-height: 150%;
+    //     border-bottom: 1px solid var(--light-solid);
+    //   }
 
 }
 
-.tt-textarea{
+.tt-textarea {
     height: 84px;
     resize: none;
 }
-
-

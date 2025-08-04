@@ -1,0 +1,93 @@
+@import "../../../../styles/mixins.scss";
+
+
+:host {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  grid-gap: 16px;
+  border: 1px solid var(--light-colour);
+  padding: 20px;
+  background: var(--dark-colour);
+  margin-bottom: 16px;
+}
+
+.post {
+  &-column {
+    display: grid;
+    grid-gap: 8px;
+  }
+
+  &-body {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
+  &-header {
+    @include flex-center;
+    gap: 8px;
+  }
+
+  &__author {
+    @include font-size14-700-150;
+    color: var(--light-colour);
+  }
+
+  &-created-at {
+    @include font-size12-500-133;
+    color: var(--light-transparen-colour);
+  }
+
+  &-content {
+    @include font-size12-500-133;
+    color: var(--light-colour);
+  }
+
+  &-counters {
+    @include flex-center;
+    gap: 20px;
+    @include font-size12-700;
+    width: 38px;
+    height: 32px;
+  }
+
+  &-comments {
+    padding: 8px 0;
+    max-height: 150px;
+    overflow-y: auto;
+    display: grid;
+    grid-gap: 16px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.button-points {
+  cursor: pointer;
+}
+
+.comment-amount {
+  @include flex-center;
+  gap: 6px;
+  color: var(--primary-colour);
+
+  &-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--primary-colour);
+
+    &.white {
+      width: 16px;
+      height: 16px;
+      color: var(--light-colour);
+    }
+  }
+}
+
+.like-amount {
+  @include flex-center;
+  gap: 6px;
+  color: var(--light-colour);
+}

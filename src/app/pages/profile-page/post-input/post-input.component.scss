@@ -1,0 +1,101 @@
+@import '../../../../styles/mixins';
+
+:host {
+  display: grid;
+  border: 1px solid var(--light-colour);
+  border-radius: 2px;
+  padding: 16px;
+  grid-template-columns: 32px 1fr;
+  grid-gap: 12px;
+  align-items: center;
+  background: var(--dark-colour);
+  margin-bottom: 16px;
+}
+
+.post {
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-subtitle {
+    background: var(--dark-colour);
+    @include font-size14-500-150;
+    padding: 10px 5px;
+    width: 100%;
+    color: var(--light-transparent-colour);
+    border: 1px dashed var(--light-transparent-colour);
+
+    &:hover,
+    &:focus-visible {
+      outline: 1px solid var(--primary-colour);
+      border-radius: 4px;
+    }
+  }
+
+
+  &-text {
+    display: grid;
+    grid-template-columns: 1fr 96px;
+    grid-gap: 12px;
+    align-items: center;
+  }
+
+  &-controls {
+    @include flex-center;
+    gap: 12px;
+  }
+
+
+  &-emoji {
+    width: 44px;
+    height: 44px;
+    background: var(--dark-colour);
+    border: none;
+  }
+
+  &-send {
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--dark-colour);
+    border-radius: 2px;
+    padding: 14px;
+    background: var(--primary-colour);
+  }
+}
+
+.hidden-textarea {
+  resize: none;
+  background: var(--dark-colour);
+  border: none;
+  @include font-size14-500-150;
+  color: var(--light-transparent-colour);
+  padding: 0 5px;
+
+  &:hover,
+  &:focus-visible {
+    outline: 1px solid var(--primary-colour);
+    border-radius: 4px;
+  }
+}
+
+.emoji-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.send-post-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  color: black;
+}
+
+
+.post-subtitle::placeholder,
+.hidden-textarea::placeholder {
+  @include font-size14-500-150;
+  color: var(--light-transparent-colour);
+}
