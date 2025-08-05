@@ -1,6 +1,7 @@
 @import "fonts";
 @import "margins";
 @import "../src/styles/mixins.scss";
+@import "../src/styles/null.scss";
 
 :root {
     --dark-colour: #000000;
@@ -9,6 +10,8 @@
     --grey-colour: #5F646D;
     --hover-colour: #161616;
     --light-transparent-colour: rgba(255, 255, 255, 0.75);
+    --dark-message-colour: #404040;
+    --dark-active-colour: #161616;
 }
 
 *,

@@ -1,0 +1,57 @@
+@import '../../../../styles/mixins.scss';
+
+:host {
+    display: grid;
+    grid-template-columns: 32px max-content;
+    grid-gap: 12px;
+    margin-bottom: 12px;
+}
+
+.message {
+    &__text {
+        @include font-size14-500-150;
+        border-radius: 1px;
+        padding: 8px 16px;
+        background-color: var(--dark-message-colour);
+        color: var(--light-colour);
+        mask:
+            linear-gradient(to bottom, #000 0%, #000 100%),
+            linear-gradient(135deg, transparent 0, transparent 10px, #000 0) border-box;
+        mask-composite: intersect;
+        mask-repeat: no-repeat;
+        mask-position: 0 0;
+        max-width: 861px;
+        word-break: break-word;
+        white-space: pre-wrap;
+    }
+
+    &__title {
+        justify-content: flex-end;
+        display: flex;
+        gap: 4px;
+        @include font-size12-700;
+    }
+
+    &__text {
+        color: var(--dark-colour);
+        background-color: var(--primary-colour);
+        mask:
+            linear-gradient(to bottom, #000 0%, #000 100%),
+            linear-gradient(-135deg, transparent 0, transparent 10px, #000 0) border-box;
+        mask-composite: intersect;
+        mask-repeat: no-repeat;
+        mask-position: 0 0;
+
+    }
+}
+
+
+:host.is-mine {
+    grid-template-columns: max-content 32px;
+    justify-self: end;
+
+    .message-wrapper {
+        order: -1;
+    }
+
+}

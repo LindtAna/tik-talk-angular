@@ -1,0 +1,16 @@
+.chats {
+  &-body {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    height: 100%;
+    background: var(--dark-colour);
+  }
+
+  &-workspace {
+    border-top: 1px solid var(--light-colour);
+    border-bottom: 1px solid var(--light-colour);
+    border-right: 1px solid var(--light-colour);
+    border-radius: 2px;
+  }
+
+}

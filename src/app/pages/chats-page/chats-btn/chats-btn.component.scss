@@ -1,0 +1,55 @@
+@import '../../../../styles/mixins.scss';
+
+:host {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    grid-gap: 16px;
+    width: 100%;
+    padding: 24px 20px;
+    border-bottom: 1px solid var(--light-colour);
+}
+
+:host:hover,
+:host:focus-visible,
+:host.active {
+    background: var(--dark-active-colour);
+}
+
+.message {
+    &-body {
+        display: grid;
+        grid-gap: 16px;
+        @include font-size12-500-133;
+        text-align: left;
+    }
+
+    &-header {
+        @include flex-center-between;
+        color: var(--light-transparent-colour);
+    }
+
+    &-content {
+        @include flex-center-between;
+        align-items: flex-start;
+        gap: 8px;
+
+    }
+
+    &-text {
+        color: var(--light-colour);
+    }
+
+
+    &-unread {
+        @include font-size12-700;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-colour);
+        padding: 0 5px;
+        min-width: 26px;
+        height: 18px;
+        text-align: center;
+        color: var(--dark-colour);
+    }
+}

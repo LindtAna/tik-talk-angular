@@ -1,0 +1,17 @@
+<div class="messages-body">
+  @for (group of groupMessages(); track group.dateTitle) {
+    <div class="message-date-title mb32">{{ group.dateTitle }}</div>
+
+    @for (message of group.messages; track message.id) {
+      <app-chat-workspace-message [message]="message"></app-chat-workspace-message>
+    }
+  }
+</div>
+<div class="messages-input">
+  <app-post-input
+    [showTitle]="false"
+    [placeholder]="'Write something...'"
+    (created)="onCreateMessage($event)"
+    borderStyle="solid">
+  </app-post-input>
+</div>
