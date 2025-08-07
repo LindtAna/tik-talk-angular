@@ -1,47 +1,55 @@
 @import "../../../styles/mixins.scss";
 
-.profile-logo-name {
-  display: grid;
-  grid-gap: 24px;
+.profile {
+  &-logo-name {
+    display: grid;
+    grid-gap: 24px;
+  }
 
-  .profile-title {
+  &-title {
     font-weight: 800;
     font-size: 24px;
     line-height: 133%;
   }
 
-  .profile-subtitle {
+  &-subtitle {
     @include font-size14-400-150;
   }
 
-  &.vertical-layout {
-    grid-template-columns: 112px 1fr;
-    max-width: 332px;
-    img {
-      width: 112px;
-      height: 112px;
-      border-radius: 100%;
-    }
-    .profiles-names {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      row-gap: 4px;
-    }
+}
+
+&.vertical-layout {
+  grid-template-columns: 112px 1fr;
+  max-width: 332px;
+
+  img {
+    width: 112px;
+    height: 112px;
+    border-radius: 100%;
   }
-  &.horizontal-layout {
-    grid-template-columns: 140px 1fr;
+
+  .profiles-names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 4px;
+  }
+}
+
+&.horizontal-layout {
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+  }
+
+  .profiles-names {
+    display: flex;
     align-items: center;
-    img {
-      width: 140px;
-      height: 140px;
-      border-radius: 100%;
-    }
-    .profiles-names {
-      display: flex;
-      align-items: center;
-      column-gap: 24px;
-    }
+    column-gap: 24px;
   }
 }

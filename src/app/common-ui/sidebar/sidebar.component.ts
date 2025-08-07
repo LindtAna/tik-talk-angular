@@ -1,21 +1,21 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { SvgIconComponent } from "../svg-icon/svg-icon.component";
-import { NgFor, NgForOf, AsyncPipe } from '@angular/common';
+import { NgForOf, AsyncPipe } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { ImgUrlPipe } from '../../helpers/pipes/img-url-pipe';
 import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
 import { ProfileService } from '../../data/services/profile.service';
 import { firstValueFrom } from 'rxjs';
+import { AvatarCircleComponent } from '../avatar-circle/avatar-circle.component';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [SvgIconComponent, NgForOf, RouterLink, ImgUrlPipe, SubscriberCardComponent, AsyncPipe, RouterLinkActive],
+  imports: [SvgIconComponent, NgForOf, RouterLink, SubscriberCardComponent, AsyncPipe, RouterLinkActive, AvatarCircleComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'
 })
-export class SidebarComponent {
-profileService = inject(ProfileService)
+export class SidebarComponent implements OnInit {
+  profileService = inject(ProfileService)
 
 subscribers$ = this.profileService.getSubscribersShortList(5)
 

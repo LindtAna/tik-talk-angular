@@ -1,4 +1,4 @@
-<img class=" "
+<!-- <img class=" "
 src="/assets/svg/logo-small.svg"
 alt="tiktak logo" class="ml16 mb20" />
 
@@ -55,4 +55,54 @@ View All Subscribers
       <svg icon="settings"></svg>
    </a>
 }
-</footer>
+</footer> -->
+
+<div class="sidebar">
+  <div class="sidebar__content">
+    <div class="sidebar__logo mb20">
+      <img src="/assets/svg/logo-small.svg" alt="TikTalk logo">
+    </div>
+    <nav class="sidebar__menu mb20">
+      <ul class="main-menu-list">
+        <li *ngFor="let menuItem of menuItems" class="menu-item">
+          <a
+            [routerLink]="[menuItem.link]"
+            class="menu-item-link"
+            routerLinkActive="active"
+          >
+            <svg class="menu-item-svg" [icon]="menuItem.icon"></svg>
+            <span class="menu-item-title">{{menuItem.label}}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="sidebar__subscribes">
+      <div class="sidebar__title mb20">Subscribers</div>
+
+      <div class="sidebar__names mb20">
+        @for (profile of subscribers$ | async; track profile.id) {
+          <app-subscriber-card [profile]="profile"></app-subscriber-card>
+        }
+      </div>
+
+      <div class="to-subscribers">
+        <a [routerLink]="['/subscriber']"  class="to-subscribers-link">
+          All subscribers
+        </a>
+        <svg icon="arrow" class="to-subscribers-icon"></svg>
+      </div>
+    </div>
+  </div>
+
+  <footer class="sidebar__footer">
+    <div class="footer-avatar">
+      @if (me(); as me) {
+        <app-avatar-circle [avatarUrl]="me.avatarUrl" [class]="'size32'"></app-avatar-circle>
+        <div class="footer-name">{{ me.username }}</div>
+        <a [routerLink]="['/settings']" class="settings-button">
+          <svg icon="settings" class="footer-avatar-icon"></svg>
+        </a>
+      }
+    </div>
+  </footer>
+</div>
