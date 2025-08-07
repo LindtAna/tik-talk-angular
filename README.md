@@ -3,6 +3,7 @@
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
 
 Telegram bot that provides access to log into a social network:  https://t.me/icherniakov_info_bot
+To gain access, you need to enter the /start command in the Telegram bot, followed by the /ytcourse command.
 
 Backend documentation: https://icherniakov.ru/yt-course/docs#/
 
