@@ -2,6 +2,15 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.0.
 
+Telegram bot that provides access to log into a social network:  https://t.me/icherniakov_info_bot
+
+Backend documentation: https://icherniakov.ru/yt-course/docs#/
+
+UI/UX mockup in Figma: https://www.figma.com/design/oGHQigWHYDVfYA7GPRi9q1/%F0%9F%92%ABTIK-TALK?node-id=30-6072&t=flDim8arSTvEPc4e-0
+
+
+
+
 ## Development server
 
 To start a local development server, run:
