@@ -20,6 +20,4 @@ export class ChatWorkspaceMessageComponent {
   get isMine() {
     return this.message().isMine;
   }
-
-
 }
